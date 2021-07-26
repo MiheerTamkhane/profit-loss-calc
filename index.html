@@ -10,17 +10,22 @@
   <body>
     <div class="buy-div">
       <label for="input1">Buy Price:</label>
-      <input type="number" class="input one" id="input1" />
+      <input type="number" class="input one" id="input1" required />
+      <small id="small1" class="small sOne"></small>
     </div>
     <div class="qty-div">
       <label for="input2">Stock Quantity:</label>
-      <input type="number" class="input two" id="input2" />
+      <input type="number" class="input two" id="input2" required />
+      <small id="small2" class="small sTwo"></small>
     </div>
     <div class="curr-div">
       <label for="input3">Current Price:</label>
-      <input type="number" class="input three" id="input3" />
+      <input type="number" class="input three" id="input3" required />
+      <small id="small3" class="small sThree"></small>
     </div>
     <button id="button" class="button">Check</button>
+
+    <div class="output" id="output"></div>
     <script src="./app.js"></script>
   </body>
 </html>
