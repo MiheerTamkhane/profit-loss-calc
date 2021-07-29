@@ -21,34 +21,45 @@ function stockHandler() {
   // console.log(totalGainOrLoss.toFixed(2));
   const percentageGainOrLoss = ((currentPrice - buyPrice) / buyPrice) * 100;
   // console.log(percentageGainOrLoss.toFixed(2) + "%");
-  let porl = ""; //profit or loss
-  let gorl = ""; //gain or lose
-  if (totalGainOrLoss >= investment) {
-    porl = "Profit";
-    gorl = "Gain";
-  } else {
-    porl = "Loss";
-    gorl = "Lose";
-  }
-  // document.body.style.backgroundColor = "yellow";
-  output.innerHTML = `
-           <ul>
-           <li>Your total Investment is : ${investment.toFixed(2)}</li>
-           <li>Your total ${porl} is : ${totalGainOrLoss.toFixed(2)}</li>
-           <li>Total Amount : ${amountReturned.toFixed(2)}</li>
-           <li>Total ${gorl} in percentage : ${percentageGainOrLoss.toFixed(
-    2
-  )}%</li>
-           </ul>
-  `;
 
-  if (buyPrice === "") {
+  let message = "";
+
+  if (percentageGainOrLoss < 0 || percentageGainOrLoss <= -50) {
+    document.body.style.backgroundColor = "#FF5D6C";
+    message = "Ohh! You lose money.";
+    output.classList.add("danger");
+    output.classList.remove("success");
+  } else if (percentageGainOrLoss >= 0) {
+    document.body.style.backgroundColor = "#acffad";
+    message = "Awwsome! You gain money.";
+    output.classList.add("success");
+  }
+  if (buyPrice > 0 && stockQty > 0 && currentPrice > 0) {
+    output.innerHTML = `
+    <h2>${message}</h2>
+  <ul class="output-ul">
+  <li>Total Investment is : ${investment.toFixed(2)}</li>
+  <li>Total ${
+    amountReturned >= investment ? "Profit" : "Loss"
+  } is : ${totalGainOrLoss.toFixed(2)}</li>
+  <li>Total Amount : ${amountReturned.toFixed(2)}</li>
+  <li>Total ${
+    amountReturned >= investment ? "Gain" : "Lose"
+  } in % : ${percentageGainOrLoss.toFixed(2)}%</li>
+  </ul>
+`;
+  }
+
+  if (buyPrice === "" || buyPrice == 0) {
+    //
     small1.innerText = "Please enter buy price";
     small2.innerText = "";
-  } else if (stockQty === "") {
+  } else if (stockQty === "" || stockQty == 0) {
+    //
     small2.innerText = "Must enter stock quantity";
     small1.innerText = "";
-  } else if (currentPrice === "") {
+  } else if (currentPrice === "" || currentPrice == 0) {
+    //
     small3.innerText = "Must enter current price";
     small1.innerText = "";
     small2.innerText = "";

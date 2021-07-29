@@ -6,26 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stocks-profit-loss</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <div class="buy-div">
-      <label for="input1">Buy Price:</label>
-      <input type="number" class="input one" id="input1" required />
-      <small id="small1" class="small sOne"></small>
-    </div>
-    <div class="qty-div">
-      <label for="input2">Stock Quantity:</label>
-      <input type="number" class="input two" id="input2" required />
-      <small id="small2" class="small sTwo"></small>
-    </div>
-    <div class="curr-div">
-      <label for="input3">Current Price:</label>
-      <input type="number" class="input three" id="input3" required />
-      <small id="small3" class="small sThree"></small>
-    </div>
-    <button id="button" class="button">Check</button>
+    <header>
+      <h1>Stock Calculator</h1>
+    </header>
 
-    <div class="output" id="output"></div>
+    <div class="container">
+      <div class="buy-div div">
+        <label for="input1">Buy Price :</label>
+        <input type="number" class="input one" id="input1" required />
+        <small id="small1" class="small sOne"></small>
+      </div>
+      <div class="qty-div div">
+        <label for="input2">Stock Quantity :</label>
+        <input type="number" class="input two" id="input2" required />
+        <small id="small2" class="small sTwo"></small>
+      </div>
+      <div class="curr-div div">
+        <label for="input3">Current Price :</label>
+        <input type="number" class="input three" id="input3" required />
+        <small id="small3" class="small sThree"></small>
+      </div>
+      <a href="#output" class="button">
+        <button class="button" id="button">Check</button>
+      </a>
+    </div>
+
+    <div class="output" id="output">
+      <h2 id="output-h2"></h2>
+    </div>
+    <footer>
+      <div class="footer-links">
+        <a href="https://github.com/MiheerTamkhane?tab=repositories"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/miheer-tamkhane-19417b19a/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://twitter.com/miheertamkhane"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+      <p>
+        Stock Calculator is an Web app which calculates your RIO (Return on
+        Investment), Loss, Gain & Profit.
+      </p>
+      <p class="footer-portfolio">
+        Created with ❤️ by
+        <strong
+          ><em
+            ><a href="https://miheertamkhane.netlify.app/">M.Dev</a></em
+          ></strong
+        >
+      </p>
+    </footer>
     <script src="./app.js"></script>
   </body>
 </html>
