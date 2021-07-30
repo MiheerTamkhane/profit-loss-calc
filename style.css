@@ -80,9 +80,12 @@ button:hover {
   margin: 1rem;
 }
 .output-ul {
-  list-style: none;
   font-size: 1.2rem;
 }
+#output h2 {
+  text-align: justify;
+}
+
 .danger {
   display: flex;
   flex-direction: column;
@@ -126,4 +129,9 @@ footer {
 .footer-portfolio {
   text-align: center;
   text-decoration: none;
+}
+.hr-tag {
+  width: 100%;
+  border: 1px solid #423453;
+  margin-bottom: 1.6rem;
 }
