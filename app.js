@@ -33,7 +33,7 @@ function stockHandler() {
     message = "Awwsome! You gain money. 😃";
     output.classList.add("success"); // When gain money
   }
-  if (buyPrice > 0 && stockQty > 0 && currentPrice > 0) {
+  if (buyPrice > 0 && stockQty > 0 && currentPrice >= 0) {
     //if all fileds are filled and more than 0 then show output
     output.innerHTML = `<hr class="hr-tag" />
     <h2>${message}</h2>
@@ -51,22 +51,28 @@ function stockHandler() {
   }
 
   //condition for showing error in <small> when fields are empty or = to 0
-  if (buyPrice === "" || buyPrice == 0) {
+  if (buyPrice === "" || buyPrice === 0) {
     //
+    small3.innerText = "";
     small1.innerText = "Please enter buy price";
     small2.innerText = "";
     document.body.style.backgroundColor = "#e6e6e6";
-  } else if (stockQty === "" || stockQty == 0) {
+  } else if (stockQty === "" || stockQty === 0) {
     //
+    small3.innerText = "";
     small2.innerText = "Must enter stock quantity";
     small1.innerText = "";
     document.body.style.backgroundColor = "#e6e6e6";
-  } else if (currentPrice === "" || currentPrice == 0) {
+  } else if (currentPrice === "" || currentPrice === 0) {
     //
+    // output.innerHTML = "SAD! You lost Everything";
     small3.innerText = "Must enter current price";
     small1.innerText = "";
     small2.innerText = "";
     document.body.style.backgroundColor = "#e6e6e6";
+    // if (currentPrice === 0) {
+    //   output.innerHTML = "SAD! You lost Everything";
+    // }
   } else {
     small3.innerText = "";
     small2.innerText = "";
