@@ -33,7 +33,7 @@ function stockHandler() {
     message = "Awwsome! You gain money. 😃";
     output.classList.add("success"); // When gain money
   }
-  if (buyPrice > 0 && stockQty > 0 && currentPrice >= 0) {
+  if (buyPrice > 0 && stockQty > 0 && currentPrice > 0) {
     //if all fileds are filled and more than 0 then show output
     output.innerHTML = `<hr class="hr-tag" />
     <h2>${message}</h2>
